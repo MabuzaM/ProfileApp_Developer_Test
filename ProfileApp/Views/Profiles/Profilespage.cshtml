@@ -1,0 +1,30 @@
+﻿@model ProfileApp.Models.Profile
+
+<br />
+<div class="jumbotron row">
+   
+            @if (Model.Id != 0)
+            {
+                <div class="col-4"><img src="/@Html.DisplayFor(modelItem => Model.Photo)" alt="@Html.DisplayFor(modelItem => Model.Firstname) Picture" /></div>
+                <div class="col-8">
+                   <h2> @Html.DisplayFor(modelItem => Model.Firstname)  @Html.DisplayFor(modelItem => Model.Surname)</h2>
+                    <div class="row">
+                        @Html.DisplayFor(modelItem => Model.Description)
+                    </div>
+                    <div class="row text-success">@Html.DisplayFor(modelItem => Model.Website) | @Html.DisplayFor(modelItem => Model.Email) | @Html.DisplayFor(modelItem => Model.Phone)</div>
+                    <div class="row btns">
+                        
+                            <a href="http://@Html.DisplayFor(modelItem => Model.Website)" target="_blank" class="btn  form-control">Visit Website</a>  <br /><br />
+                            <a asp-action="Index" class="btn btn-success form-control">Request CV</a>
+                      
+                    </div>
+                    <div class="row pt-2 btns">
+                        <a asp-action="Index" class="btn form-control">Back to Dev List</a>
+                    </div>
+                </div>
+            }
+</div>
+
+@section scripts{
+    <partial name="_validationScriptsPartial" />
+}

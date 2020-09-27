@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ProfileApp.Models.Profile>
+
+<br />
+<div class="jumbotron">
+    <h1 class="text-center">Welcome to the Developers profile</h1>
+    <br />
+    <table id="DT_load" class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Firstname)</th>
+                <th>@Html.DisplayNameFor(model => model.Surname)</th>
+                <th>@Html.DisplayNameFor(model => model.Website)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <th>@Html.DisplayNameFor(model => model.Phone)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+    </table>
+
+
+</div>
+
+
+@section scripts {
+    <script src="~/js/Profiles.js"></script>
+}
